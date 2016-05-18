@@ -124,14 +124,14 @@ public class Encoder {
 		return result2;
 	}
 
-	public void shiftleft(byte[] arg) {
-		for (int i = arg.length; i > -1; i--) {
-			if (i < arg.length) {
-				arg[i] = arg[i + 1];
-			}
-			arg[i] = arg[0];
-		}
-	}
+//	public void shiftleft(byte[] arg) {
+//		for (int i = arg.length; i > -1; i--) {
+//			if (i < arg.length) {
+//				arg[i] = arg[i + 1];
+//			}
+//			arg[i] = arg[0];
+//		}
+//	}
 
 	public static byte[] fblock(byte[] a, byte[] b) {
 		sub1 = a[0];
@@ -156,6 +156,7 @@ public class Encoder {
 	// needs finished
 	public static byte sblock(byte a, byte b, byte x) {
 		temps = (byte) (a + b + (x % 256));
+		temps=(byte) (temps<<2);
 		return temps;
 	}
 	
